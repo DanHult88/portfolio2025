@@ -1,0 +1,315 @@
+/* ===== Page / nav ===== */
+
+.page {
+  min-height: 100vh;
+}
+
+/* Optional: slightly lighter “panel” feel behind content (less dead-black) */
+.page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    900px 520px at 50% 0%,
+    rgba(59, 130, 246, 0.06),
+    transparent 60%
+  );
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.74);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.navLink:hover {
+  color: var(--mantine-color-blue-4);
+}
+
+/* ===== Strong divider bar (use between sections + under hero buttons) ===== */
+
+.sectionBar {
+  margin: 38px 0 42px;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0),
+    rgba(59, 130, 246, 0.55),
+    rgba(59, 130, 246, 0)
+  );
+  box-shadow: 0 0 26px rgba(59, 130, 246, 0.18);
+}
+
+/* ===== Buttons ===== */
+
+.primaryBtn {
+  background: var(--mantine-color-blue-6);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 35px rgba(59, 130, 246, 0.35);
+}
+
+/* Strong override for Mantine Button root */
+.hoverBtn {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+
+  transition: transform 180ms ease, box-shadow 180ms ease,
+    background-color 180ms ease, border-color 180ms ease !important;
+
+  will-change: transform;
+}
+
+.hoverBtn:hover,
+.hoverBtn:focus-visible {
+  background-color: var(--mantine-color-blue-6) !important;
+  border-color: var(--mantine-color-blue-6) !important;
+  color: #ffffff !important;
+
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 14px 35px rgba(59, 130, 246, 0.45) !important;
+}
+
+.hoverBtn:active {
+  transform: translateY(-1px) scale(1.01) !important;
+}
+
+/* =========================================================
+   HERO (spacier Jensen-style layout)
+========================================================= */
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 72px; /* MORE AIR */
+  align-items: center;
+  margin-top: 72px; /* MORE AIR */
+}
+
+@media (max-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    margin-top: 48px;
+  }
+}
+
+/* Greeting row: "Hello" + dot */
+.helloRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  margin-bottom: 22px; /* MORE AIR */
+}
+
+.heroHello {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #fff;
+  line-height: 1;
+}
+
+.helloDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--mantine-color-blue-6);
+  box-shadow: 0 0 0 7px rgba(59, 130, 246, 0.18);
+  transform: translateY(12px);
+}
+
+/* "I'm Dan" spacing */
+.heroName {
+  font-size: 30px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.86);
+  margin-top: 10px;
+  margin-bottom: 26px;
+}
+
+/* Role spacing */
+.heroRole {
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  color: #fff;
+  line-height: 1.05;
+}
+
+@media (max-width: 600px) {
+  .heroHello {
+    font-size: 34px;
+  }
+  .heroRole {
+    font-size: 42px;
+  }
+}
+
+/* Accent line: give it space */
+.heroAccentLine {
+  width: 110px;
+  height: 3px;
+  background: rgba(59, 130, 246, 0.75);
+  box-shadow: 0 0 28px rgba(59, 130, 246, 0.25);
+  margin: 26px 0 34px;
+  border-radius: 999px;
+}
+
+.heroBodyWrap {
+  margin-top: 8px;
+}
+
+.heroBody {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 600px;
+}
+
+.heroCallout {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+/* Tech banner: calmer + separated */
+.techBanner {
+  margin-top: 30px;
+  gap: 18px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   PHOTO (bigger + more presence)
+========================================================= */
+
+.photoWrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 380px;
+}
+
+.photoHalo {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(59, 130, 246, 0.28),
+    rgba(59, 130, 246, 0.08) 55%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+.photoRing {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 999px;
+  border: 12px solid rgba(59, 130, 246, 0.45);
+  box-shadow: 0 0 70px rgba(59, 130, 246, 0.25);
+}
+
+.avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  border: none;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+
+  /* Feather edges */
+  -webkit-mask-image: radial-gradient(circle, #000 62%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 62%, transparent 72%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+@media (max-width: 900px) {
+  .photoHalo {
+    width: 300px;
+    height: 300px;
+  }
+  .photoRing {
+    width: 280px;
+    height: 280px;
+    border-width: 10px;
+  }
+  .avatar {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+/* =========================================================
+   Sections / cards alignment
+========================================================= */
+
+.section {
+  padding-top: 10px;
+}
+
+.sectionInner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  text-align: center;
+}
+
+/* Project cards: visible blue border even at rest */
+.projectCard {
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease,
+    background-color 180ms ease;
+
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  background-color: rgba(255, 255, 255, 0.035);
+  border-radius: 16px;
+}
+
+.projectCard:hover,
+.projectCard:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.55);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(59, 130, 246, 0.12);
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.055);
+}
+
+/* Card layout: keep actions aligned at bottom */
+.projectBody {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projectDescription {
+  flex: 1;
+}
+
+.projectLinks {
+  margin-top: auto;
+}

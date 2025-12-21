@@ -1,0 +1,327 @@
+/* ================================
+   Buttons
+================================ */
+
+/* Strong override for Mantine Button root */
+.hoverBtn {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease !important;
+
+  will-change: transform;
+}
+
+/* Hover + keyboard focus */
+.hoverBtn:hover,
+.hoverBtn:focus-visible {
+  background-color: var(--mantine-color-blue-6) !important;
+  border-color: var(--mantine-color-blue-6) !important;
+  color: #ffffff !important;
+
+  transform: scale(1.08) !important;
+  box-shadow: 0 14px 35px rgba(59, 130, 246, 0.45) !important;
+}
+
+/* Active press feedback */
+.hoverBtn:active {
+  transform: scale(1.04) !important;
+}
+
+/* ✅ NEW: force equal button width (Contact section) */
+.contactBtn {
+  min-width: 160px;
+  text-align: center;
+}
+
+/* Primary CTA */
+.primaryBtn {
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.25);
+}
+
+/* ================================
+   Layout & Sections
+================================ */
+
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(99, 102, 241, 0.22), transparent 55%),
+    radial-gradient(700px 400px at 85% 20%, rgba(59, 130, 246, 0.18), transparent 55%),
+    #050509;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+}
+
+.sectionInner {
+  width: 100%;
+  max-width: 900px;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Divider bar */
+.sectionBar {
+  margin: 38px 0 42px;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0),
+    rgba(59, 130, 246, 0.55),
+    rgba(59, 130, 246, 0)
+  );
+  box-shadow: 0 0 26px rgba(59, 130, 246, 0.18);
+}
+
+/* ================================
+   Navigation
+================================ */
+
+.navLink {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 160ms ease;
+}
+
+.navLink:hover {
+  color: var(--mantine-color-blue-4);
+}
+
+/* ================================
+   Hero
+================================ */
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 56px;
+}
+
+@media (max-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.helloRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.helloDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--mantine-color-blue-6);
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.18);
+}
+
+.heroHello {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #fff;
+  line-height: 1;
+}
+
+.heroName {
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 10px;
+}
+
+.heroRole {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-top: 10px;
+  line-height: 1.05;
+}
+
+@media (max-width: 600px) {
+  .heroHello {
+    font-size: 32px;
+  }
+  .heroRole {
+    font-size: 40px;
+  }
+}
+
+.heroAccentLine {
+  width: 72px;
+  height: 2px;
+  background: rgba(59, 130, 246, 0.7);
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.25);
+  margin: 18px 0;
+  border-radius: 999px;
+}
+
+.heroBody {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.techBanner {
+  margin-top: 26px;
+  gap: 22px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-wrap: wrap;
+}
+
+/* ================================
+   Photo
+================================ */
+
+.photoWrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+}
+
+.photoHalo {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(59, 130, 246, 0.26),
+    rgba(59, 130, 246, 0.06) 55%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+.photoRing {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 999px;
+  border: 10px solid rgba(59, 130, 246, 0.45);
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.25);
+}
+
+.avatar {
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: 50% 35%;
+  display: block;
+  border: none;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .photoHalo {
+    width: 280px;
+    height: 280px;
+  }
+
+  .photoRing {
+    width: 260px;
+    height: 260px;
+    border-width: 8px;
+  }
+
+  .avatar {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* ================================
+   Project Cards
+================================ */
+
+.projectCard {
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.projectCard:hover,
+.projectCard:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  border-color: rgba(59, 130, 246, 0.35) !important;
+}
+
+.projectCard:hover {
+  background-color: rgba(255, 255, 255, 0.055) !important;
+}
+
+.projectBody {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projectDescription {
+  flex: 1;
+}
+
+.projectLinks {
+  margin-top: auto;
+}
+.navLink {
+  position: relative;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+/* underline line */
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--mantine-color-blue-4);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 160ms ease;
+}
+
+/* mouse hover */
+.navLink:hover {
+  color: var(--mantine-color-blue-4);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* keyboard focus (tabbing) */
+.navLink:focus-visible::after {
+  transform: scaleX(1);
+}

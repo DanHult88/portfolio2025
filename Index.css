@@ -1,0 +1,18 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+
+  /* Less dark, more navy/blue depth */
+  background:
+    radial-gradient(900px 520px at 18% 10%, rgba(99, 102, 241, 0.20), transparent 55%),
+    radial-gradient(800px 480px at 82% 18%, rgba(16, 185, 129, 0.12), transparent 60%),
+    radial-gradient(900px 600px at 55% 0%, rgba(59, 130, 246, 0.10), transparent 65%),
+    linear-gradient(180deg, #070816 0%, #05060f 45%, #050509 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
